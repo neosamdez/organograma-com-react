@@ -5,7 +5,7 @@ import Button from "../Button";
 import { useState } from "react";
 
 
-const Forms = () => {
+const Forms = (props) => {
     const posits = [
         'Suporte',
         'Adc',
@@ -24,9 +24,13 @@ const Forms = () => {
 
     const toSave = (event) => {
         event.preventDefault()
-        console.log('form foi submetido => ', nome, imagem, personagem, posit)
+        props.onPlayerRegistered({
+            nome,
+            imagem,
+            personagem,
+            posit
+        })
     }
-
 
     return (
         <section className="forms">
