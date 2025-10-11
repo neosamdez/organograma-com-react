@@ -12,7 +12,12 @@ const TextField = (props) => {
     return (
         <div className="text-field">   
             <label>{props.label}</label>
-            <input value={props.valor} onChange={typed} required={props.mandatory} placeholder={props.placeholder} />
+            <input 
+                value={props.valor} 
+                onChange={typed} 
+                required={props.mandatory} 
+                placeholder={props.placeholder} 
+            />
         </div>
         
     )
