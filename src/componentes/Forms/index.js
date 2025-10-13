@@ -7,11 +7,13 @@ import { useState } from "react";
 
 const Forms = (props) => {
     const posits = [
-        'Suporte',
-        'Adc',
-        'Tank',
-        'Assassino',
-        'Lutador'
+        'Programação',
+        'Front-and',
+        'Data-science',
+        'Devops',
+        'UX e Designe',
+        'Mobile',
+        'Inovaçao e gestao'
     ]
 
 
