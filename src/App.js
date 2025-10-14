@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Banner from './componentes/Banner';
 import Forms from './componentes/Forms';
 import Time from './componentes/Time';
+import Footer from './componentes/Footer';
 
 
 function App() {
@@ -58,6 +59,7 @@ function App() {
       corSecundaria={time.corSecundaria}
       officials={players.filter(player => player.time === time.nome)}
       /> )}
+      <Footer/>
 
     </div>
   );
