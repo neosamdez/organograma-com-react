@@ -19,6 +19,10 @@
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08);
     padding-top: 90px;
     padding-bottom: 40px;
+    font-display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .officials .footer h4 {
@@ -26,7 +30,7 @@
     font-size: 18px;
     line-height: 22px;
     font-weight: bold;
-    margin: 8px;
+    margin: 4px 0;
 }
 
 .officials .footer h5 {
@@ -34,5 +38,7 @@
     line-height: 22px;
     color: #212121;
     padding: 0 16px;
+    margin: 0;
+
 }
 
