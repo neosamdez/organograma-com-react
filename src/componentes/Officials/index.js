@@ -1,10 +1,10 @@
 import './Officials.css'
 
 
-const Officials = ({imagem, nome, cargo}) => {
+const Officials = ({imagem, nome, cargo, corDeFundo}) => {
     return (
     <div className='officials'>
-        <div className='header'>
+        <div className='header' style={{ backgroundColor: corDeFundo}}>
             <img src={imagem} alt={nome} />
         </div>
         <div className='footer'>

@@ -10,6 +10,7 @@ const Time = ({ nome, corPrimaria, corSecundaria, officials }) => {
             <div className='colaboradores'>
                 {officials.map((official) => (
                     <Officials
+                        corDeFundo={corPrimaria}
                         key={official.nome} 
                         nome={official.nome}
                         imagem={official.imagem}

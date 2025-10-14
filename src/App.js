@@ -42,7 +42,6 @@ function App() {
   const [players, setPlayers] = useState([])
 
   const onNewPlayer = (player) => {
-    console.log(player)
     setPlayers([...players, player])
 
   }
