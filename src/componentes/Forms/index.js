@@ -6,22 +6,12 @@ import { useState } from "react";
 
 
 const Forms = (props) => {
-    const posits = [
-        'Programação',
-        'Front-and',
-        'Data-science',
-        'Devops',
-        'UX e Designe',
-        'Mobile',
-        'Inovaçao e gestao'
-    ]
-
 
 
     const [nome, setNome] = useState('')
     const [imagem, setImagem] = useState('')
-    const [personagem, setPersonagem] = useState('')
-    const [posit, setPosit] = useState('')
+    const [cargo, setCargo] = useState('')
+    const [time, setTime] = useState('')
 
 
     const toSave = (event) => {
@@ -29,19 +19,23 @@ const Forms = (props) => {
         props.onPlayerRegistered({
             nome,
             imagem,
-            personagem,
-            posit
-        })
+            cargo,
+            time
+        })  
+        setNome('')
+        setImagem('')
+        setCargo('')
+        setTime('') 
     }
 
     return (
         <section className="forms">
             <form onSubmit={toSave}>
-                <h2> Prencha os dados do jogador </h2>
+                <h2> Prencha os dados do time </h2>
                 <TextField 
                     mandatory={true} 
                     label="Nome" 
-                    placeholder="Digite seu nickname"
+                    placeholder="Digite seu nome"
                     valor={nome}
                     onChanged={valor => setNome(valor)}
                 />
@@ -53,17 +47,17 @@ const Forms = (props) => {
                 />
                 <TextField 
                     mandatory={true} 
-                    label="Personagem" 
-                    placeholder="Personagem principal"
-                    valor={personagem}
-                    onChanged={valor => setPersonagem(valor)}
+                    label="Cargo" 
+                    placeholder="Cargo principal"
+                    valor={cargo}
+                    onChanged={valor => setCargo(valor)}
                 />
                 <Dropdown 
                     mandatory={true} 
-                    label="Posição" 
-                    itens={posits}
-                    valor={posit}
-                    onChanged={valor => setPosit(valor)}
+                    label="Time" 
+                    itens={props.times}
+                    valor={time}
+                    onChanged={valor => setTime(valor)}
                 />               
                 <Button>
                     Criar card

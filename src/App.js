@@ -50,12 +50,14 @@ function App() {
   return (
     <div className="App">
       <Banner />
-      <Forms onPlayerRegistered={player => onNewPlayer(player)}/>
+      <Forms times={times.map(time => time.nome)} onPlayerRegistered={player => onNewPlayer(player)}/>
 
-      {times.map(time => <Time key={time.nome} 
+      {times.map(time => <Time 
+      key={time.nome} 
       nome={time.nome} 
       corPrimaria={time.corPrimaria}
       corSecundaria={time.corSecundaria}
+      officials={players.filter(player => player.time === time.nome)}
       /> )}
 
     </div>
