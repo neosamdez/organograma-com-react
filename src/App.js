@@ -188,8 +188,6 @@ function App() {
 ]
 
 
-
-
   const [players, setPlayers] = useState(inicial)
 
   const onNewPlayer = (player) => {
@@ -197,18 +195,24 @@ function App() {
 
   }
 
+  const deletePlayer = () => {
+
+  }
+
   return (
     <div className="App">
       <Banner />
-      <Forms times={times.map(time => time.nome)} onPlayerRegistered={player => onNewPlayer(player)}/>
-
-      {times.map(time => <Time 
-      key={time.nome} 
-      nome={time.nome} 
-      corPrimaria={time.corPrimaria}
-      corSecundaria={time.corSecundaria}
-      officials={players.filter(player => player.time === time.nome)}
-      /> )}
+      <Forms times={times.map(time => time.nome)}
+        onPlayerRegistered={player => onNewPlayer(player)}/>
+      {times.map(time => 
+        <Time 
+          key={time.nome} 
+          nome={time.nome} 
+          corPrimaria={time.corPrimaria}
+          corSecundaria={time.corSecundaria}
+          officials={players.filter(player => player.time === time.nome)}
+          onDelete={deletePlayer}
+        /> )}
       <Footer/>
 
     </div>

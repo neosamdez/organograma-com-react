@@ -1,5 +1,6 @@
 .officials {
-    width: 280px;
+    position: relative;
+    width: 320px;
 }
 
 .officials .header {
@@ -19,7 +20,8 @@
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08);
     padding-top: 90px;
     padding-bottom: 40px;
-    font-display: flex;
+    border-radius: 0px 0px 10px 10px;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -31,6 +33,9 @@
     line-height: 22px;
     font-weight: bold;
     margin: 4px 0;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    text-align: center;
 }
 
 .officials .footer h5 {
@@ -39,6 +44,11 @@
     color: #212121;
     padding: 0 16px;
     margin: 0;
-
 }
 
+
+.delete {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+}
