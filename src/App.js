@@ -7,7 +7,7 @@ import Footer from './componentes/Footer';
 
 function App() {
 
-  const times = [
+  const [times,setTimes] = useState([
   {
     nome: 'Front-End',
     corPrimaria: '#82CFFA',
@@ -38,7 +38,7 @@ function App() {
     corPrimaria: '#FF8A29',
     corSecundaria: '#FFEEDF',
   }
-  ]
+  ])
 
   const inicial = [
   {
@@ -199,13 +199,26 @@ function App() {
 
   }
 
+  function onColorTime(cor, nome){
+    setTimes(times.map(time => {
+      if(time.nome === nome) {
+        time.corSecundaria = cor
+      }
+      return time
+    }))
+  }
+
+
   return (
     <div className="App">
       <Banner />
       <Forms times={times.map(time => time.nome)}
         onPlayerRegistered={player => onNewPlayer(player)}/>
+        <section className="time">
+        <h1>Minha organização</h1>
       {times.map(time => 
         <Time 
+          onCor={onColorTime}
           key={time.nome} 
           nome={time.nome} 
           corPrimaria={time.corPrimaria}
@@ -213,6 +226,7 @@ function App() {
           officials={players.filter(player => player.time === time.nome)}
           onDelete={deletePlayer}
         /> )}
+        </section>
       <Footer/>
 
     </div>
