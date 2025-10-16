@@ -1,5 +1,5 @@
 import "./Forms.css";
-import TextField from "../TextField";
+import Field from "../Field";
 import Dropdown from "../Dropdown";
 import Button from "../Button";
 import { useState } from "react";
@@ -30,24 +30,36 @@ const Forms = ({onPlayerRegistered, times, onRegisteredTime}) => {
         setTime('') 
     }
 
+
+    const toSaveOne = (event) => { 
+        event.preventDefault()
+        onRegisteredTime({
+            nome: nomeTime, 
+            cor: corTime
+        })
+        setNomeTime('')
+        setCorTime('')
+  
+    } 
+
     return (
         <section className="forms">
             <form onSubmit={toSave}>
                 <h2> Prencha os dados do player </h2>
-                <TextField 
+                <Field 
                     mandatory={true} 
                     label="Nome" 
                     placeholder="Digite seu nome"
                     valor={nome}
                     onChanged={valor => setNome(valor)}
                 />
-                <TextField 
+                <Field 
                     label="Imagem" 
                     placeholder="Link da imagem aqui"
                     valor={imagem}
                     onChanged={valor => setImagem(valor)}
                 />
-                <TextField 
+                <Field 
                     mandatory={true} 
                     label="Cargo" 
                     placeholder="Cargo principal"
@@ -66,20 +78,18 @@ const Forms = ({onPlayerRegistered, times, onRegisteredTime}) => {
                 </Button>
             </form>
             
-            <form onSubmit={(event => {
-                event.preventDefault()
-                onRegisteredTime({nome: nomeTime, cor: corTime})
-            })}>
+            <form onSubmit={toSaveOne}>
                 <h2> Prencha os dados criar novo time </h2>
-                <TextField 
+                <Field 
                     mandatory 
                     label="Nome" 
                     placeholder="Digite o nome do time"
                     valor={nomeTime}
                     onChanged={valor => setNomeTime(valor)}
                 />
-                <TextField 
+                <Field 
                     mandatory
+                    type="color"
                     label="Cor" 
                     placeholder="Digite a cor do time"
                     valor={corTime}

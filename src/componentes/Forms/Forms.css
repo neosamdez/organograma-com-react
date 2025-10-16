@@ -1,11 +1,12 @@
 .forms {
+    gap: 20px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    margin: 80px 0;
+    margin: 80px 50;
 }
 
 .forms form {
-    max-width: 80%;
     background-color: #f2f2f2;
     border-radius: 20px;
     padding: 24px 64px;
