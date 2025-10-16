@@ -23,7 +23,7 @@ const Time = ({ nome, cor, officials, onDelete, onCor, id }) => {
                         nome={official.nome}
                         imagem={official.imagem}
                         cargo={official.cargo}
-                        onDelete={() => {}}
+                        onDelete={() => onDelete(official.id)}
                     />
                 })}
             </div>

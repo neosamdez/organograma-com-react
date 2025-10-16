@@ -220,8 +220,8 @@ function App() {
 
   }
 
-  const deletePlayer = () => {
-
+  const deletePlayer = (id) => {
+    setPlayers(players.filter(player => player.id !== id ))
   }
 
   function onColorTime(cor, id){
@@ -233,12 +233,20 @@ function App() {
     }))
   }
 
+  const onRegisteredTime = (newTime) => {
+    setTimes([...times, {...newTime, id: uuidv4()}])
+
+  }
+
 
   return (
     <div className="App">
       <Banner />
-      <Forms times={times.map(time => time.nome)}
-        onPlayerRegistered={player => onNewPlayer(player)}/>
+      <Forms 
+        onRegisteredTime={onRegisteredTime}
+        times={times.map(time => time.nome)}
+        onPlayerRegistered={player => onNewPlayer(player)}
+      />
         <section className="time">
         <h1>Minha organização</h1>
       {times.map(time => 
@@ -247,7 +255,6 @@ function App() {
           onCor={onColorTime}
           key={time.nome} 
           nome={time.nome} 
-          corPrimaria={time.cor}
           cor={time.cor}
           officials={players.filter(player => player.time === time.nome)}
           onDelete={deletePlayer}
