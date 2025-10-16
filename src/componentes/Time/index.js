@@ -1,22 +1,24 @@
 import Officials from '../Officials'
 import './Time.css'
+import hexToRgba from 'hex-to-rgba'
 
-const Time = ({ nome, corPrimaria, corSecundaria, officials, onDelete, onCor }) => {
+const Time = ({ nome, cor, officials, onDelete, onCor, id }) => {
     if (officials.length === 0) return null  
 
     return (
-        <section className='time' style={{ backgroundImage: 'url(/imagens/fundo.png)', backgroundColor: corSecundaria }}>
+        <section className='time' style={{ backgroundImage: 'url(/imagens/fundo.png)', backgroundColor: hexToRgba(cor, '0.6') }}>
             <input 
-                onChange={event => onCor(event.target.value, nome)}
-                value={corSecundaria} 
+                onChange={event => onCor(event.target.value, id)}
+                value={cor} 
                 type='color' 
                 className='input-cor'
             />
-            <h3 style={{ borderColor: corSecundaria }}>{nome}</h3>
+            <h3 style={{ borderColor: cor }}>{nome}</h3>
             <div className='colaboradores'>
                 {officials.map((official) => {
                     return <Officials
-                        corDeFundo={corPrimaria}
+                        id={id}
+                        corDeFundo={cor}
                         key={official.nome} 
                         nome={official.nome}
                         imagem={official.imagem}
