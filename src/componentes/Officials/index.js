@@ -8,6 +8,11 @@ const Officials = ({id, imagem, nome, cargo, corDeFundo, onDelete, favorito, onF
         onFavoritar(id)
     }
 
+    const propsfavorito = {
+        size: 24,
+        onClick: favoritar
+    }
+
     return (
     <div className='officials'>
         <AiFillCloseCircle 
@@ -23,8 +28,8 @@ const Officials = ({id, imagem, nome, cargo, corDeFundo, onDelete, favorito, onF
             <h5>{cargo}</h5>
             <div className='favoritar'>
                 {favorito 
-                    ? <AiFillHeart size={25} onClick={favoritar}/> 
-                    : <AiOutlineHeart size={25} onClick={favoritar}/>
+                    ? <AiFillHeart {...propsfavorito}color='#ff0000'/> 
+                    : <AiOutlineHeart {...propsfavorito}/>
                 }
             </div>
         </div>
