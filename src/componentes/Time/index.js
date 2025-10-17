@@ -2,7 +2,7 @@ import Officials from '../Officials'
 import './Time.css'
 import hexToRgba from 'hex-to-rgba'
 
-const Time = ({ nome, cor, officials, onDelete, onCor, id }) => {
+const Time = ({ nome, cor, officials, onDelete, onCor, id, onFavoritar }) => {
     if (officials.length === 0) return null  
 
     return (
@@ -17,9 +17,11 @@ const Time = ({ nome, cor, officials, onDelete, onCor, id }) => {
             <div className='colaboradores'>
                 {officials.map((official) => {
                     return <Officials
-                        id={id}
+                        id={official.id}
+                        onFavoritar={onFavoritar}
                         corDeFundo={cor}
-                        key={official.nome} 
+                        key={official.id}
+                        favorito={official.favorito}
                         nome={official.nome}
                         imagem={official.imagem}
                         cargo={official.cargo}
