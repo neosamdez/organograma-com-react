@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    /* Diretórios */
+    "rootDir": "./src",
+    "outDir": "./dist",
+
+    /* Módulos e Target */
+    "target": "ESNext",
+    "module": "nodeNext",
+    "moduleResolution": "NodeNext",
+    "allowJs": true,
+    "resolveJsonModule": true,
+
+    /* JSX para React */
+    "jsx": "react-jsx",
+
+    /* Tipagem e segurança */
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "skipLibCheck": true,
+
+    /* Suporte a imports */
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+
+    /* Mapas de build */
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}
