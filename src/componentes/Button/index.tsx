@@ -1,8 +1,6 @@
 import { ReactElement } from 'react'
 import './Button.css'
 
-
-
 interface ButtonProps {
     children: ReactElement
 }
