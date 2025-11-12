@@ -1,7 +1,7 @@
 import './Field.css'
 
 interface CampoTextoProps {
-    type?: string
+    type?: 'text' | 'date' | 'email'| 'password' | 'number' | 'color'
     label: string
     placeholder?: string
     valor: string
@@ -30,7 +30,7 @@ const Field = ({
                 value={valor}
                 onChange={typed}
                 required={mandatory}
-                placeholder={placeholder}
+                placeholder={placeholder}      
             />
         </div>
     )

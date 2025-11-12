@@ -5,4 +5,5 @@ export interface IOfficials {
   imagem: string
   favorito: boolean
   time: string
+  data: string
 }

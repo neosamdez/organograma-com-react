@@ -26,6 +26,7 @@ const Forms = ({
     const [time, setTime] = useState('')
     const [nomeTime, setNomeTime] = useState('')
     const [corTime, setCorTime] = useState('')
+    const [data, setData] = useState('')    
 
 
     const toSave = (event: React.FormEvent<HTMLFormElement> ) => {
@@ -36,7 +37,8 @@ const Forms = ({
             nome,
             imagem,
             cargo,
-            time
+            time,
+            data
         })  
         setNome('')
         setImagem('')
@@ -72,6 +74,14 @@ const Forms = ({
                     placeholder="Link da imagem aqui"
                     valor={imagem}
                     onChanged={valor => setImagem(valor)}
+                />
+                <Field 
+                    mandatory={true} 
+                    label="Data de entrada no time" 
+                    placeholder=""
+                    valor={data}
+                    type="date"
+                    onChanged={valor => setData(valor)}
                 />
                 <Field 
                     mandatory={true} 

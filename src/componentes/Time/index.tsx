@@ -51,6 +51,7 @@ const Time = ({
             corDeFundo={cor}
             onDelete={() => onDelete(official.id)}
             onFavoritar={onFavoritar}
+            data={official.data}
           />
         ))}
       </div>

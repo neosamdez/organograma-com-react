@@ -10,6 +10,7 @@ interface OfficialsProps {
     onDelete: (id: string) => void
     favorito: boolean
     onFavoritar: (id: string) => void
+    data: string
 }
 
 const Officials = ({
@@ -20,7 +21,8 @@ const Officials = ({
     corDeFundo, 
     onDelete, 
     favorito, 
-    onFavoritar
+    onFavoritar,
+    data
 }: OfficialsProps) => {
 
     function favoritar( ) {
@@ -46,6 +48,7 @@ const Officials = ({
         <div className='footer'>
             <h4>{nome}</h4>
             <h5>{cargo}</h5>
+            <h5>{new Date(data).toLocaleDateString()}</h5>
             <div className='favoritar'>
                 {favorito 
                     ? <AiFillHeart {...propsfavorito}color='#ff0000'/> 
