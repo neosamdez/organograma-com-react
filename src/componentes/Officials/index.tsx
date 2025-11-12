@@ -1,8 +1,27 @@
 import { AiFillCloseCircle, AiFillHeart, AiOutlineHeart } from 'react-icons/ai'
 import './Officials.css'
 
+interface OfficialsProps {
+    nome: string
+    imagem: string
+    cargo: string
+    corDeFundo: string
+    id: string
+    onDelete: (id: string) => void
+    favorito: boolean
+    onFavoritar: (id: string) => void
+}
 
-const Officials = ({id, imagem, nome, cargo, corDeFundo, onDelete, favorito, onFavoritar}) => {
+const Officials = ({
+    id, 
+    imagem, 
+    nome, 
+    cargo, 
+    corDeFundo, 
+    onDelete, 
+    favorito, 
+    onFavoritar
+}: OfficialsProps) => {
 
     function favoritar( ) {
         onFavoritar(id)
@@ -18,7 +37,8 @@ const Officials = ({id, imagem, nome, cargo, corDeFundo, onDelete, favorito, onF
         <AiFillCloseCircle 
             size={30} 
             className='delete' 
-            onClick={onDelete} 
+            onClick={() => onDelete(id)}
+
         />
         <div className='header' style={{ backgroundColor: corDeFundo}}>
             <img src={imagem} alt={nome} />
