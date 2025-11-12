@@ -44,6 +44,7 @@ const Forms = ({
         setImagem('')
         setCargo('')
         setTime('') 
+        setData('')
     }
 
 
