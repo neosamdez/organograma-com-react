@@ -4,4 +4,5 @@ export interface IOfficials {
   cargo: string
   imagem: string
   favorito: boolean
+  time: string
 }

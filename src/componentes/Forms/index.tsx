@@ -3,9 +3,21 @@ import Field from "../Field";
 import Dropdown from "../Dropdown";
 import Button from "../Button";
 import { useState } from "react";
+import { IOfficials } from "../Share/interFaces/IOfficials";
+import { v4 as uuidv4} from 'uuid'
+
+interface FormsProps {
+    onPlayerRegistered:(officilas:IOfficials) => void
+    times: string[]
+    onRegisteredTime: (time: { nome: string; cor: string }) => void
+}
 
 
-const Forms = ({onPlayerRegistered, times, onRegisteredTime}) => {
+const Forms = ({
+    onPlayerRegistered, 
+    times, 
+    onRegisteredTime
+}:FormsProps) => {
 
 
     const [nome, setNome] = useState('')
@@ -16,9 +28,11 @@ const Forms = ({onPlayerRegistered, times, onRegisteredTime}) => {
     const [corTime, setCorTime] = useState('')
 
 
-    const toSave = (event) => {
+    const toSave = (event: React.FormEvent<HTMLFormElement> ) => {
         event.preventDefault()
         onPlayerRegistered({
+            id: uuidv4(),
+            favorito:false,
             nome,
             imagem,
             cargo,
@@ -31,7 +45,7 @@ const Forms = ({onPlayerRegistered, times, onRegisteredTime}) => {
     }
 
 
-    const toSaveOne = (event) => { 
+    const toSaveOne = (event: React.FormEvent<HTMLFormElement>) => { 
         event.preventDefault()
         onRegisteredTime({
             nome: nomeTime, 
