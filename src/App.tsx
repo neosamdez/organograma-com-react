@@ -4,11 +4,15 @@ import Banner from './componentes/Banner'
 import Time from './componentes/Time';
 import Footer from './componentes/Footer';
 import { v4 as uuidv4 } from 'uuid'
+import { IOfficials } from './componentes/Share/interFaces/IOfficials';
+import { ITime } from './componentes/Share/interFaces/ITime';
+
+
 
 
 function App() {
 
-  const [times,setTimes] = useState([
+  const [times,setTimes] = useState<ITime[]>([
   {
     id: uuidv4(),
     nome: 'Front-End',
@@ -41,14 +45,14 @@ function App() {
   }
   ])
 
-  const inicial = [
+  const inicial: IOfficials[] = [
   {
     id: uuidv4(),
     favorito: false,
     nome: 'JULIANA AMOASEI',
     cargo: 'Desenvolvedora de software e instrutora',
     imagem: 'https://www.alura.com.br/assets/img/lideres/juliana-amoasei.1647533644.jpeg',
-    time: times[0].nome
+    time: times[0]?.nome || ''
   },
   {
     id: uuidv4(),
@@ -56,7 +60,7 @@ function App() {
     nome: 'NEO SAM',
     cargo: 'Engenheiro de Software na Stone Age',
     imagem: 'https://github.com/neosamdez.png',
-    time: times[0].nome
+    time: times[0]?.nome || ''
   },
   {
     id: uuidv4(),
@@ -64,7 +68,7 @@ function App() {
     nome: 'GUILHERME LIMA',
     cargo: 'Desenvolvedor Python e JavaScript na Alura',
     imagem: '	https://www.alura.com.br/assets/img/lideres/guilherme-lima.1647533644.jpeg',
-    time: times[0].nome
+    time: times[0]?.nome || ''
   },
   {
     id: uuidv4(),
@@ -72,7 +76,7 @@ function App() {
     nome: 'PAULO SILVEIRA',
     cargo: 'Hipster e CEO da Alura',
     imagem: 'https://www.alura.com.br/assets/img/lideres/paulo-silveira.1647533644.jpeg',
-    time: times[0].nome
+    time: times[0]?.nome || ''
   },
   {
     id: uuidv4(),
@@ -80,7 +84,7 @@ function App() {
     nome: 'JULIANA AMOASEI',
     cargo: 'Desenvolvedora de software e instrutora',
     imagem: 'https://www.alura.com.br/assets/img/lideres/juliana-amoasei.1647533644.jpeg',
-    time: times[1].nome
+    time: times[1]?.nome || ''
   },
   {
     id: uuidv4(),
@@ -88,7 +92,7 @@ function App() {
     nome: 'DANIEL ARTINE',
     cargo: 'Engenheiro de Software na Stone Age',
     imagem: 'https://www.alura.com.br/assets/img/lideres/daniel-artine.1647533644.jpeg',
-    time: times[1].nome
+    time: times[1]?.nome || ''
   },
   {
     id: uuidv4(),
@@ -96,7 +100,7 @@ function App() {
     nome: 'GUILHERME LIMA',
     cargo: 'Desenvolvedor Python e JavaScript na Alura',
     imagem: '	https://www.alura.com.br/assets/img/lideres/guilherme-lima.1647533644.jpeg',
-    time: times[1].nome
+    time: times[1]?.nome || ''
   },
   {
     id: uuidv4(),
@@ -104,7 +108,7 @@ function App() {
     nome: 'PAULO SILVEIRA',
     cargo: 'Hipster e CEO da Alura',
     imagem: 'https://www.alura.com.br/assets/img/lideres/paulo-silveira.1647533644.jpeg',
-    time: times[1].nome
+    time: times[1]?.nome || ''
   },
   {
     id: uuidv4(),
@@ -112,7 +116,7 @@ function App() {
     nome: 'JULIANA AMOASEI',
     cargo: 'Desenvolvedora de software e instrutora',
     imagem: 'https://www.alura.com.br/assets/img/lideres/juliana-amoasei.1647533644.jpeg',
-    time: times[2].nome
+    time: times[2]?.nome || ''
   },
   {
     id: uuidv4(),
@@ -120,7 +124,7 @@ function App() {
     nome: 'DANIEL ARTINE',
     cargo: 'Engenheiro de Software na Stone Age',
     imagem: 'https://www.alura.com.br/assets/img/lideres/daniel-artine.1647533644.jpeg',
-    time: times[2].nome
+    time: times[2]?.nome || ''
   },
   {
     id: uuidv4(),
@@ -128,7 +132,7 @@ function App() {
     nome: 'GUILHERME LIMA',
     cargo: 'Desenvolvedor Python e JavaScript na Alura',
     imagem: '	https://www.alura.com.br/assets/img/lideres/guilherme-lima.1647533644.jpeg',
-    time: times[2].nome
+    time: times[2]?.nome || ''
   },
   {
     id: uuidv4(),
@@ -136,7 +140,7 @@ function App() {
     nome: 'PAULO SILVEIRA',
     cargo: 'Hipster e CEO da Alura',
     imagem: 'https://www.alura.com.br/assets/img/lideres/paulo-silveira.1647533644.jpeg',
-    time: times[2].nome
+    time: times[2]?.nome || ''
   },
   {
     id: uuidv4(),
@@ -144,7 +148,7 @@ function App() {
     nome: 'JULIANA AMOASEI',
     cargo: 'Desenvolvedora de software e instrutora',
     imagem: 'https://www.alura.com.br/assets/img/lideres/juliana-amoasei.1647533644.jpeg',
-    time: times[3].nome
+    time: times[3]?.nome || ''
   },
   {
     id: uuidv4(),
@@ -152,7 +156,7 @@ function App() {
     nome: 'DANIEL ARTINE',
     cargo: 'Engenheiro de Software na Stone Age',
     imagem: 'https://www.alura.com.br/assets/img/lideres/daniel-artine.1647533644.jpeg',
-    time: times[3].nome
+    time: times[3]?.nome || ''
   },
   {
     id: uuidv4(),
@@ -160,7 +164,7 @@ function App() {
     nome: 'GUILHERME LIMA',
     cargo: 'Desenvolvedor Python e JavaScript na Alura',
     imagem: '	https://www.alura.com.br/assets/img/lideres/guilherme-lima.1647533644.jpeg',
-    time: times[3].nome
+    time: times[3]?.nome || ''
   },
   {
     id: uuidv4(),
@@ -168,7 +172,7 @@ function App() {
     nome: 'PAULO SILVEIRA',
     cargo: 'Hipster e CEO da Alura',
     imagem: 'https://www.alura.com.br/assets/img/lideres/paulo-silveira.1647533644.jpeg',
-    time: times[3].nome
+    time: times[3]?.nome || ''
   },
   {
     id: uuidv4(),
@@ -176,7 +180,7 @@ function App() {
     nome: 'JULIANA AMOASEI',
     cargo: 'Desenvolvedora de software e instrutora',
     imagem: 'https://www.alura.com.br/assets/img/lideres/juliana-amoasei.1647533644.jpeg',
-    time: times[4].nome
+    time: times[4]?.nome || ''
   },
   {
     id: uuidv4(),
@@ -184,7 +188,7 @@ function App() {
     nome: 'DANIEL ARTINE',
     cargo: 'Engenheiro de Software na Stone Age',
     imagem: 'https://www.alura.com.br/assets/img/lideres/daniel-artine.1647533644.jpeg',
-    time: times[4].nome
+    time: times[4]?.nome || ''
   },
   {
     id: uuidv4(),
@@ -192,7 +196,7 @@ function App() {
     nome: 'GUILHERME LIMA',
     cargo: 'Desenvolvedor Python e JavaScript na Alura',
     imagem: '	https://www.alura.com.br/assets/img/lideres/guilherme-lima.1647533644.jpeg',
-    time: times[4].nome
+    time: times[4]?.nome || ''
   },
   {
     id: uuidv4(),
@@ -200,7 +204,7 @@ function App() {
     nome: 'PAULO SILVEIRA',
     cargo: 'Hipster e CEO da Alura',
     imagem: 'https://www.alura.com.br/assets/img/lideres/paulo-silveira.1647533644.jpeg',
-    time: times[4].nome
+    time: times[4]?.nome || ''
   },
   {
     id: uuidv4(),
@@ -208,7 +212,7 @@ function App() {
     nome: 'JULIANA AMOASEI',
     cargo: 'Desenvolvedora de software e instrutora',
     imagem: 'https://www.alura.com.br/assets/img/lideres/juliana-amoasei.1647533644.jpeg',
-    time: times[5].nome
+    time: times[5]?.nome || ''
   },
   {
     id: uuidv4(),
@@ -216,7 +220,7 @@ function App() {
     nome: 'DANIEL ARTINE',
     cargo: 'Engenheiro de Software na Stone Age',
     imagem: 'https://www.alura.com.br/assets/img/lideres/daniel-artine.1647533644.jpeg',
-    time: times[5].nome
+    time: times[5]?.nome || ''
   },
   {
     id: uuidv4(),
@@ -224,7 +228,7 @@ function App() {
     nome: 'GUILHERME LIMA',
     cargo: 'Desenvolvedor Python e JavaScript na Alura',
     imagem: '	https://www.alura.com.br/assets/img/lideres/guilherme-lima.1647533644.jpeg',
-    time: times[5].nome
+    time: times[5]?.nome || ''
   },
   {
     id: uuidv4(),
@@ -232,70 +236,74 @@ function App() {
     nome: 'PAULO SILVEIRA',
     cargo: 'Hipster e CEO da Alura',
     imagem: 'https://www.alura.com.br/assets/img/lideres/paulo-silveira.1647533644.jpeg',
-    time: times[5].nome
+    time: times[5]?.nome || ''
   },
 ]
 
 
-  const [players, setPlayers] = useState(inicial)
+  const [players, setPlayers] = useState<IOfficials[]>(inicial)
 
-  const onNewPlayer = (player) => {
+ // ----- FUNÇÕES -----
+  const onNewPlayer = (player: IOfficials): void => {
     setPlayers([...players, player])
-
   }
 
-  const deletePlayer = (id) => {
-    setPlayers(players.filter(player => player.id !== id ))
+  const deletePlayer = (id: string): void => {
+    setPlayers(players.filter(player => player.id !== id))
   }
 
-  function onColorTime(cor, id){
+  const onColorTime = (cor: string, id: string): void => {
     setTimes(times.map(time => {
-      if(time.id === id) {
-        time.cor = cor
+      if (time.id === id) {
+        return { ...time, cor }
       }
       return time
     }))
   }
 
-  const onRegisteredTime = (newTime) => {
-    setTimes([...times, {...newTime, id: uuidv4()}])
-
+  const onRegisteredTime = (newTime: { nome: string; cor: string }): void => {
+    setTimes([...times, { ...newTime, id: uuidv4() }])
   }
 
-  function favoriteResolve(id){
+  const favoriteResolve = (id: string): void => {
     setPlayers(players.map(player => {
-      if (player.id === id) player.favorito = !player.favorito
+      if (player.id === id) {
+        return { ...player, favorito: !player.favorito }
+      }
       return player
     }))
   }
 
-
+  // ----- JSX -----
   return (
     <div className="App">
-      <Banner enderecoImagem = 'imagens/banner.png' />
-      <Forms 
+      <Banner enderecoImagem="imagens/banner.png" />
+
+      <Forms
         onRegisteredTime={onRegisteredTime}
         times={times.map(time => time.nome)}
-        onPlayerRegistered={player => onNewPlayer(player)}
+        onPlayerRegistered={onNewPlayer}
       />
-        <section className="time">
-        <h1>Minha organização</h1>
-      {times.map(time => 
-        <Time 
-          onFavoritar={favoriteResolve}
-          id={time.id}
-          onCor={onColorTime}
-          key={time.nome} 
-          nome={time.nome} 
-          cor={time.cor}
-          officials={players.filter(player => player.time === time.nome)}
-          onDelete={deletePlayer}
-        /> )}
-        </section>
-      <Footer/>
 
+      <section className="time">
+        <h1>Minha organização</h1>
+        {times.map(time => (
+          <Time
+            key={time.id}
+            id={time.id}
+            nome={time.nome}
+            cor={time.cor}
+            officials={players.filter(player => player.time === time.nome)}
+            onCor={onColorTime}
+            onDelete={deletePlayer}
+            onFavoritar={favoriteResolve}
+          />
+        ))}
+      </section>
+
+      <Footer />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
